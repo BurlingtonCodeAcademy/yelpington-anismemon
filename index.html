@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Yelp Home</title>
 </head>
-<body>
 
+<body>
+  <h1 id='header'>YELP!...ington</h1>
+  <div id='main-content'>
+    <sidebar id='sidebar'>Burlington Restaurants</sidebar>
+    <ul id="resto-list"></ul>
+    <div id='map'></div>
+  </div>
+  <div id='comments'>Here is a comment</div>
+  <footer>Contact info</footer>
+  <button id="goToResto" onClick="location.href='restaurant-page.html'">Restaurants</button>
   <script src="main.js"></script>
 </body>
+
 </html>

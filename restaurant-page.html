@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <h1 id='header'>
+        <div id='yelp'>YELP!...ington</div>
+    </h1>
+    <div id='map-container'>
+        <div id='map'></div>
+        
+    </div>
+    <sidebar id='sidebar'>
+        <ul id="restaurant-info"></ul>
+    </sidebar>
+
+
+    <div id='comments-container'>
+      <p id="comments">Here is a comment</p>
+    </div>
+
+    <section id="footer">
+        <div class="footerContainer">
+            <div class="item footerHeader"><span>Questions or comments? </span><span class="darkerGray">&nbsp; &nbsp; Get in
+                Touch: </span></div>
+            <div class="footerForm">
+              <div class="formRowOne">
+                <input type="email" name="email" id="email" placeholder="Email" />
+                <input type="text" name="name" id="name" placeholder="Name" />
+              </div>
+              <div class="formRowTwo">
+                <textarea name="feedback" id="feedback" placeholder="Message"></textarea>
+              </div>
+              <button class="redButton" onClick="alert('Thanks for your submission!')"><i class="far fa-file-alt"></i>
+                Submit</button>
+            </div>
+            <div class="item footerInfo darkerGray">
+              <p>I'm baby selfies actually godard disrupt af cloud bread skateboard swag vice.
+                Blog mustache 3 wolf moon leggings, sriracha austin iceland deep v typewriter edison bulb banjo.
+                Flexitarian vinyl organic chia pok pok fam palo santo banh mi pop-up jean shorts leggings single-origin coffee
+                synth.
+                Tbh kinfolk biodiesel affogato raclette roof party beard pork belly,
+                chicharrones four loko taxidermy next level master cleanse knausgaard letterpress.</p>
+            </div>
+            <div class="footerContact">
+              <ul>
+                <li id='listFormat'>
+                  <p class="left"><i class="fas fa-home"></i></p>
+                  <p class="right">The Burlington Code Academy
+                    <br />182 Main Street <br />Burlington, VT 05701</p>
+                </li>
+                <li><i class="fas fa-phone"></i> phone</li>
+                <li><i class="far fa-envelope"></i> email</li>
+              </ul>
+              <ul>
+                <li><i class="fab fa-facebook-square"></i> facebook</li>
+                <li><i class="fab fa-twitter-square"></i> twitter</li>
+                <li><i class="fab fa-dribbble"></i> dribble</li>
+                <li><i class="fab fa-instagram"></i> instagram</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+    <script src="../restaurants.js"></script>
+    <script src="https://kit.fontawesome.com/6e9a3147d8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
