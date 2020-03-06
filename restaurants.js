@@ -1,6 +1,6 @@
 // map
 
-let myMap = L.map('map').setView([44.477, -73.212], 16);
+let myMap = L.map('map').setView([44.477, -73.212], 15);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 	maxZoom: 19,
@@ -20,34 +20,42 @@ console.log(id)
 // function to retrieve from database all info concerning the restaurant
 
 async function getRestoInfo() {
-        let restaurant = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants/' + id)
-        .then((response) => {
-            return response.json()
-        }).then((jsonObj) => {
-           return jsonObj
-            
-        })
+	let restaurant = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants/' + id)
+		.then((response) => {
+			return response.json()
+		}).then((jsonObj) => {
+			return jsonObj
 
-        let name = restaurant.name
-        console.log(restaurant.name)
-        let address = restaurant.address
-        let phone = restaurant.phone
-        let website = restaurant.website
-        let hours = restaurant.hours
-        let notes = restaurant.notes
+		})
 
-        //let sidebar = document.getElementById('sidebar')
-		let comments = document.getElementById('comments')
-		let restaurantInfo = document.getElementById('restaurant-info')
+	let name = restaurant.name
+	console.log(restaurant.name)
+	let address = restaurant.address
+	let phone = restaurant.phone
+	let website = restaurant.website
+	let hours = restaurant.hours
+	let notes = restaurant.notes
 
-        if(hours = 'undefined') {
-			hours = 'No hours available'
-		}
+	let comments = document.getElementById('comments')
 
-       restaurantInfo.innerHTML = `<li><p>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
-       
-       comments.innerHTML = `<p>${notes}</p>`
-       placeMarker(address, name) 
+	// iterates over notes array and adds each comment to the comments box
+
+	notes.forEach((note) => {
+		comments.innerHTML += `<li style='padding-top: 1vh'>"${note}"</li>`
+	})
+
+	//let sidebar = document.getElementById('sidebar')
+	
+	let restaurantInfo = document.getElementById('restaurant-info')
+
+	if (hours = 'undefined') {
+		hours = 'No hours available'
+	}
+
+	restaurantInfo.innerHTML = `<li><p style='font-size: 4vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
+
+	
+	placeMarker(address, name)
 }
 
 getRestoInfo()
@@ -76,7 +84,7 @@ function placeMarker(address, name) {
 				thisMarker.closePopup()
 			})
 		})
-	
+
 }
 
 //placeMarker("163 Main St. Burlington, VT 05401")
