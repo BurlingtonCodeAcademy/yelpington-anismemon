@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title id='title'>Document</title>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -18,25 +18,27 @@
 
 <body>
   <h1 id='header'>
-    <div id='yelp'>YELP!...ington</div>
+    <div id='yelp' onClick="location.href='/index.html'">YELP!<em>...ington</em></div>
   </h1>
-  <div id='map-container'>
-    <div id='map'></div>
+  <div id='main-content'>
+    <sidebar id='sidebar'>
+      <ul id="restaurant-info"></ul>
+    </sidebar>
+    <div id='map-container'>
+      <div id='map'></div>
 
+    </div>
   </div>
-  <sidebar id='sidebar'>
-    <ul id="restaurant-info"></ul>
-  </sidebar>
-
-
   <div id='comments-container'>
-    <p id="comments">This is what people are saying:</p>
-  
+    <p id="comments"><em>This is what people are saying:</em></p>
+
+
   </div>
 
   <section id="footer">
     <div class="footerContainer">
-      <div class="item footerHeader"><span>We'd love to hear from you! </span><span class="darkerGray">&nbsp; &nbsp; Add a Comment: </span></div>
+      <div class="item footerHeader"><span>We'd love to hear from you! </span><span class="darkerGray">&nbsp; &nbsp; Add
+          a Comment: </span></div>
       <div class="footerForm">
         <div class="formRowOne">
           <input type="email" name="email" id="email" placeholder="Email" />
@@ -45,17 +47,10 @@
         <div class="formRowTwo">
           <textarea name="feedback" id="feedback" placeholder="Message"></textarea>
         </div>
-        <button class="redButton" onClick="alert('Thanks for your submission!')"><i class="far fa-file-alt"></i>
+        <button id="button"><i class="far fa-file-alt"></i>
           Submit</button>
       </div>
-      <!-- <div class="item footerInfo darkerGray">
-        <p>I'm baby selfies actually godard disrupt af cloud bread skateboard swag vice.
-          Blog mustache 3 wolf moon leggings, sriracha austin iceland deep v typewriter edison bulb banjo.
-          Flexitarian vinyl organic chia pok pok fam palo santo banh mi pop-up jean shorts leggings single-origin coffee
-          synth.
-          Tbh kinfolk biodiesel affogato raclette roof party beard pork belly,
-          chicharrones four loko taxidermy next level master cleanse knausgaard letterpress.</p>
-      </div> -->
+
       <div class="footerContact">
         <ul>
           <li id='listFormat'>
