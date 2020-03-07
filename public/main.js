@@ -25,7 +25,7 @@ async function getRestos() {
         let id = resto.id
         let address = resto.address
 
-        // creates list of restaurant name links
+        // creates list of restaurant name links and inserts into homepage
 
         listContainer.innerHTML += `<li><a href='/restaurant-page/${id}' style="text-decoration: none">${name}</a></li>`
 

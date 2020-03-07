@@ -7,7 +7,7 @@ let pathArray = path.split('/') // gets the id number which is the last part of 
 
 let id = pathArray.pop()
 
-// other variables
+// other variables from HTML
 
 let comments = document.getElementById('comments')
 
@@ -20,7 +20,7 @@ let email = document.getElementById('email')
 
 // function to add inputted comments to comment space
 
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
 	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
 	message.value = ""
 	email.value = ''
@@ -46,17 +46,13 @@ async function getRestoInfo() {
 	let hours = restaurant.hours
 	let notes = restaurant.notes
 
-	// iterates over notes array and adds each comment to the comments box
+	// checks for missing information 
 
-	notes.forEach((note) => {
-		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${note}"</li>`
-	})
-
-	if (hours === 'undefined') {
+	if (!restaurant.hasOwnProperty('hours')) {
 		hours = 'No hours available'
 	}
 
-	if (website === 'undefined') {
+	if (!restaurant.hasOwnProperty('website')) {
 		website = ''
 	}
 
@@ -64,13 +60,19 @@ async function getRestoInfo() {
 
 	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
 
+	// iterates over notes array and adds each comment to the comments box
+
+	notes.forEach((note) => {
+		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${note}"</li>`
+	})
+
 	// adds restaurant name to page title
 
 	let title = document.getElementById('title')
 
 	title.innerHTML = name
 
-	// cals placeMarker function
+	// calls placeMarker function
 
 	placeMarker(address, name)
 }
@@ -90,7 +92,7 @@ function placeMarker(address, name) {
 			let lat = info.lat
 			let long = info.lon
 
-			// inserts map and focuses on specific location by retrieved lat and long coordinates
+			// inserts map and focuses in on specific location by retrieved lat and long coordinates
 
 			let myMap = L.map('map').setView([lat, long], 17);
 
@@ -109,5 +111,4 @@ function placeMarker(address, name) {
 				thisMarker.closePopup()
 			})
 		})
-
 }

@@ -1,4 +1,12 @@
- * {
+@media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px) 
+    and (-webkit-min-device-pixel-ration: 3)
+    and (orientation: potrait) {
+        
+    }
+
+* {
      padding: 0;
      margin: 0;
  }
@@ -6,19 +14,23 @@
  body {
      font-family: 'Josefin Slab', serif;
      font-weight: bold;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
  }
+ 
+/********** main content areas **********/
 
  #header {
      display: flex;
      justify-content: center;
      align-items: center;
-     background-color: rgb(129, 33, 129);
+     background: linear-gradient(rgb(129, 33, 129), rgb(196, 112, 196), rgb(129, 33, 129));     
      width: 98vw;
      height: 15vh;
      margin: 0.5rem auto;
      border-radius: 10px;
      font-family: 'Signika', sans-serif;
-     font-size: 8vh;
+     font-size: 45px;
  }
 
  #main-content {
@@ -31,33 +43,16 @@
 
  #sidebar {
      width: 25vw;
-     background-color: rgb(182, 74, 182);
+     background-color: rgb(182, 74, 182);     
      border-radius: 10px;
      margin: 0.5rem auto;
      font-size: 3vh;
      padding: 3vh 0 0 1vw;
- }
-
- #comments-container {
-     display: flex;
-     justify-content: flex-start;
-     min-height: 10vh;
-     max-width: 98vw;
-     margin: 0 auto;
-     background-color: rgb(182, 74, 182);
-     border-radius: 10px;
-     font-size: 3vh;
- }
-
- #comments {
-     padding-left: 3vw;
-     padding-bottom: 1vh;
-     padding-top: 3vh;
-     font-size: 3vh;
+     flex: 1;
  }
 
  #map {
-     height: 85vh;
+     height: 90vh;
      width: 71vw;
      border-radius: 10px;
  }
@@ -66,9 +61,30 @@
      display: flex;
      justify-content: center;
      max-width: 90vw;
-     border-radius: 2px;
+     border-radius: 10px;
      margin: 0.5rem auto;
+     flex: 1;
  }
+
+ #comments-container {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 10vh;
+    max-width: 98vw;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgb(182, 74, 182), rgb(219, 139, 219), rgb(182, 74, 182));
+    border-radius: 10px;
+    font-size: 3vh;
+}
+
+#comments {
+    padding-left: 3vw;
+    padding-bottom: 1vh;
+    padding-top: 3vh;
+    font-size: 3vh;
+}
+
+ /********* list content within main areas **********/
 
  ul#restaurant-info {
      list-style-type: none;
@@ -79,11 +95,11 @@
  ul#resto-list {
      list-style-type: none;
      text-decoration: none;
+     margin-bottom: 1vh;
  }
 
  li {
      padding: 1vh 0;
-     /* padding-left: none; */
  }
 
  a:link {
@@ -96,15 +112,11 @@
  }
 
  a:hover {
-    color: rgb(206, 106, 206)
-}
+     color: rgb(206, 106, 206)
+ }
 
  #yelp:hover {
      color: white;
- }
-
- #resto-list {
-     margin-bottom: 1vh;
  }
 
  /************* footer styles *************/
@@ -112,7 +124,8 @@
  #footer {
      grid-area: footer;
      margin: 0.5rem auto;
-     background-color: rgb(129, 33, 129);
+     /* background-color: rgb(129, 33, 129); */
+     background: linear-gradient(127deg, rgb(196, 112, 196), rgb(129, 33, 129));
      max-width: 98vw;
      max-height: 600px;
      font-family: 'Signika', sans-serif;
@@ -123,7 +136,7 @@
      max-width: 94%;
      margin: 0 auto;
      display: grid;
-     grid-template-columns: 2fr 2fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
      grid-template-rows: 1fr 4fr;
      grid-gap: 1rem;
      grid-template-areas: "footerHeader footerHeader footerHeader footerHeader" "footerForm footerForm footerContact footerContact";
@@ -132,8 +145,7 @@
  .footerHeader {
      font-variant: small-caps;
      text-align: center;
-     font-size: 1.4rem;
-     /* font-style: italic; */
+     font-size: 1.4rem;     
      grid-area: footerHeader;
  }
 
@@ -171,27 +183,9 @@
  }
 
  .darkerGray {
-     color: #696969;
+     color: #c9b8b8;
  }
-
- #footer .formRowOne {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     padding: 5px;
-     margin-bottom: 10px;
- }
-
- .formRowOne input {
-     height: 30px;
-     box-shadow: 0px 4px 8px 0px gray;
-     border-radius: 2px;
-     font-size: 1.2em;
-     border: none;
-     margin-right: 10px;
-     margin-top: 5px;
-     width: 95%;
- }
-
+ 
  .formRowTwo {
      display: grid;
      grid-template-columns: 1fr;
@@ -248,6 +242,6 @@
      box-shadow: 0px 4px 8px 0px gray;
  }
 
- button:hover{
+ button:hover {
      background-color: rgb(240, 162, 240);
  }
