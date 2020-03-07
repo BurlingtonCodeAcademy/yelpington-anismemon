@@ -12,8 +12,34 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 
 let listContainer = document.getElementById('resto-list')
 
-async function getRestos() {
-    let restoList = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants')
+// async function getRestos() {
+//     let restoList = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants')
+//         .then((response) => {
+//             return response.json()
+//         }).then((jsonArr) => {
+//             return jsonArr
+//         })
+
+//     restoList.forEach((resto) => {
+//         let name = resto.name
+//         let id = resto.id
+//         let address = resto.address
+
+//         // creates list of restaurant name links and inserts into homepage
+
+//         listContainer.innerHTML += `<li><a href='/restaurant-page/${id}' style="text-decoration: none">${name}</a></li>`
+
+//         placeMarker(address, name, id)
+
+//     })
+// }
+
+// getRestos()
+
+// function to retrieve data from my api
+
+async function getMoreRestos() {
+    let restoList = await fetch('/api/indexRestaurants.json')
         .then((response) => {
             return response.json()
         }).then((jsonArr) => {
@@ -34,7 +60,7 @@ async function getRestos() {
     })
 }
 
-getRestos()
+getMoreRestos()
 
 // function to place a marker on the map by lat and long coordinates
 

@@ -1,0 +1,238 @@
+[
+    {
+        "id": "ahli-babas-kabob",
+        "name": "Ahli Baba's Kabob Shop",
+        "address": "163 Main St. Burlington, VT 05401",
+        "phone": "862-5752",
+        "website": "http://places.singleplatform.com/ahli-babas-kabob-shop/menu",
+        "hours": "9AM-3AM Everyday",
+        "notes": [
+            "Nice little shop that serves delicious street food."
+        ]
+    },
+  
+    {
+        "id": "american-flatbread",
+        "name": "American Flatbread",
+        "address": "115 St Paul St. Burlington, VT 05401",
+        "phone": "861-2999",
+        "website": "http://americanflatbread.com/restaurants/burlington-vt/",
+        "hours": "Monday - Friday: 11:30 a.m. - 3:00 p.m. & 5:00 p.m. - 11:30 p.m. Saturday - Sunday: 11:30 a.m. - 11:30 p.m.",
+        "notes": [
+          "Great pizza doing good for the community!",
+          "No reservations, first come first served seating.",
+          "Lively choice for craft beer & inventive wood-fired pizzas loaded with organic, seasonal toppings."
+        ]
+      },
+
+      {
+        "id": "august-first",
+        "name": "August First",
+        "address": "149 S Champlain St. Burlington, VT 05401",
+        "phone": "540-0060",
+        "website": "http://augustfirstvt.com/",
+        "notes": [
+          "Homemade and from scratch breakfast and lunch made with natural ingredients!",
+          "Fantastic baked goods!",
+          "Catering, and Private Parties available!"
+        ]
+      },
+
+      {
+        "id": "city-market",
+        "name": "City Market",
+        "address": "82 S Winooski Ave. Burlington, VT 05401",
+        "phone": "861-9700",
+        "website": "http://www.citymarket.coop",
+        "hours": "7AM-11PM Everyday",
+        "notes": [
+          "Delicious salad bar, prepared hot and cold foods, plus sandwiches."
+        ]
+      },
+
+      {
+        "id": "el-cortijo",
+        "name": "El Cortijo Taqueria",
+        "address": "189 Bank St. Burlington, VT 05401",
+        "phone": "497-1668",
+        "website": "http://www.cortijovt.com",
+        "notes": [
+          "A member of the Farmhouse group.",
+          "Over 25 varieties of Tequila"
+        ]
+      },
+
+      {
+        "id": "foam-brewers",
+        "name": "Foam Brewers",
+        "address": "112 Lake Street Burlington, VT 05401",
+        "phone": "399-2511",
+        "website": "http://www.foambrewers.com/",
+        "hours": "MONDAY - WEDNESDAY, 12 PM - 9 PM THURSDAY, 12 PM - 10 PM FRIDAY - SATURDAY, 11 AM - 11 PM SUNDAY, 12 PM - 8 PM",
+        "notes": [
+          "Ample, free parking.",
+          "Because Burlington needs another brewhouse."
+        ]
+      },
+
+      {
+        "id": "gaku-ramen",
+        "name": "Gaku Ramen",
+        "address": "144 Church St. Burlington Vermont 05401",
+        "phone": "497-3050",
+        "website": "http://gakuramen.com/",
+        "hours": "Sunday – Thursday: 11a.m. – 10p.m.",
+        "notes": [
+          "Authentic Japanese cuisine in the Green Mountains.",
+          "Huge bowls of ramen, come hungry!",
+          "Decent potstickers, nothing special really."
+        ]
+      },
+
+      {
+        "id": "halvorsons",
+        "name": "Halvorson's",
+        "address": "16 Church Street Burlington, VT 05401",
+        "phone": "658-0278",
+        "website": "https://www.halvorsonsupstreetcafe.com/",
+        "hours": "Sunday: 10 a.m. - 9 p.m. Monday - Thursday: 11 a.m. - 9 p.m. Friday & Saturday: 11 a.m. - 10 p.m.",
+        "notes": [
+            "Kind of stuffy, traditional cooking."
+        ]
+    },
+
+      {
+        "id": "hen-of-the-wood",
+        "name": "Hen of The Wood",
+        "address": "55 Cherry St. Burlington, VT 05401",
+        "phone": "802-540-0534",
+        "website": "http://www.henofthewood.com",
+        "hours": "Sunday - Saturday: 4:00p.m. - 11:00p.m.",
+        "notes": [
+          "$1 oyster happy hour 4pm-5pm.",
+          "$23 dollar brocolli to die for.",
+          "boho vermont farm chic with a cozy ambiance.",
+          "The flavors of the food and strength of the cocktails makes up for the snotty first impression and expensive prices.",
+          "Intimate eatery featuring daily menus of local, seasonal fare, craft cocktails & understated decor."
+        ]
+      },
+
+      {
+        "id": "henrys-diner",
+        "name": "Henry's Diner",
+        "address": "155 Bank St. Burlington Vermont 05401",
+        "phone": "862-9010",
+        "website": "http://www.henofthewood.com",
+        "hours": "Sunday - Saturday: 6a.m. - 4p.m.",
+        "notes": [
+          "Voted the best diner in Vermont by American Express.",
+          "A great place to enjoy a meal with family and friends!",
+          "Breakfast all day!"
+        ]
+      },
+
+      {
+        "id": "istanbul-kebab-house",
+        "name": "Istanbul Kebab House",
+        "address": "175 Church Street Burlington, VT 05452",
+        "phone": "857-5091",
+        "website": "http://www.istanbulkebabhousevt.com/index.html",
+        "hours": "Monday 11am - 9pm Tues-Thursday, Sun 11am - 9pm Fri, Sat 11am - 10pm Lunch served until 3pm",
+        "notes": [
+          "Over-priced, crap service, but hey it's better than Ahli-Kebaba's!"                  ]
+      },
+
+      {
+        "id": "kismayo-kitchen",
+        "name": "Kismayo Kitchen",
+        "address": "505 Riverside Ave, Burlington, VT 05401",
+        "phone": "448-3032",
+        "website": "https://kismayo-kitchen.business.site/?utm_source=gmb&utm_medium=referral",
+        "hours": "Saturday - Thursday: 11AM - 8PM Friday 2 - 9PM",
+        "notes": [
+          "Off the beaten path!",
+          "Avoid downtown parking and come here!"          
+        ]
+      },
+
+      {
+        "id": "kountry-kart-deli",
+        "name": "Kountry Kart Deli",
+        "address": "155 Main St. Burlington, VT 05401",
+        "phone": "864-4408",
+        "website": "http://www.kountrykartdeli.com",
+        "notes": [
+          "Home of the world famous Shiner!"
+        ]
+      },
+
+      {
+        "id": "mr-mikes",
+        "name": "Mr. Mike's",
+        "address": "206 Main St. Burlington, VT 05401",
+        "phone": "864-0072",
+        "hours": "Sunday - Wednesday: 11:00 a.m. - 1:00 a.m. Thursday - Saturday: 11:00 a.m. - 3 a.m.",
+        "website": "https://mrmikespizzavt.com/",
+        "notes": [
+          "The greatest pizza around! call 864-0072 or order online for free delivery!"
+        ]
+      },
+      
+      {
+        "id": "pho-hong",
+        "name": "Pho Hong",
+        "address": "325 N Winooski Ave, Burlington, VT 05401",
+        "phone": "865-8031",    
+        "hours": "Saturday: 11AM - 4PM & 5PM - 10PM Sunday: 11AM - 4PM & 5PM - 9M Monday: closed Tuesday - Friday: 11AM - 4PM & 5PM - 10PM",
+        "notes": ["Burlington's best restaurant!", "And Winooski's too!!!", "Khan is the greatest!"]
+    },
+
+    {
+        "id": "pizzeriz-verita",
+        "name": "Pizzeria Verita'",
+        "address": "156 Saint Paul Street Burlington, VT 05401",
+        "phone": "489-5644",
+        "hours": "Su-Th 5p–10p F-Sa 5p–11p",
+        "website": "https://www.pizzeriaverita.com/",
+        "notes": [
+          "La verita' e' nell'impasto.",
+          "Screw Flatbread, this is the real deal!"
+        ]
+      },
+
+      {
+        "id": "shy-guy-gelato",
+        "name": "Shy Guy Gelato",
+        "address": "457 Saint Paul Street Burlington, VT 05401",
+        "phone": "518-951-0442",        
+        "website": "https://shyguygelato.com/",
+        "notes": [          
+          "Not technically a restaurant, but some people consider ice cream a meal."
+        ]
+      },
+
+      {
+        "id": "single-pebble",
+        "name": "A Single Pebble",
+        "address": "133 Bank St. Burlington Vermont 05401",
+        "phone": "865-5200",
+        "website": "https://asinglepebble.com/",
+        "hours": "Sunday - Saturday: 5p.m. - close",
+        "notes": [
+          "Great asian food, a bit on the pricey side, but worth it.",
+          "Open for lunch on Fridays."
+        ]
+      },
+      
+    {
+        "id": "three-needs",
+        "name": "Three Needs",
+        "address": "185 Pearl Street Burlington, VT 05401",
+        "phone": "497-0119",
+        "website": "https://www.threeneeds.net/",
+        "hours": "Daily 4 p.m. - 2 a.m.",
+        "notes": [
+            "They make their own beer and pizza!"
+        ]
+    }
+]

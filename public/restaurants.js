@@ -15,22 +15,83 @@ let restaurantInfo = document.getElementById('restaurant-info')
 
 let button = document.getElementById('button')
 let message = document.getElementById('feedback')
-let userName = document.getElementById('name')
-let email = document.getElementById('email')
+
+let savedComments
 
 // function to add inputted comments to comment space
 
 button.addEventListener('click', function () {
-	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
+	populateStorage()
+	retrieveSavedComments()
+	console.log(localStorage.notes)
+	console.log(savedComments)
+	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${savedComments}"</li>`
 	message.value = ""
-	email.value = ''
-	userName.value = ''
+
 })
+
+// button.addEventListener('click', function () {
+// 	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
+// 	message.value = ""
+
+// })
 
 // function to retrieve from database all info concerning the restaurant
 
-async function getRestoInfo() {
-	let restaurant = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants/' + id)
+// async function getRestoInfo() {
+// 	let restaurant = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants/' + id)
+// 		.then((response) => {
+// 			return response.json()
+// 		}).then((jsonObj) => {
+// 			return jsonObj
+
+// 		})
+// 	// initializing variables for info to be added to sidebar on restaurant page
+
+// 	let name = restaurant.name
+// 	let address = restaurant.address
+// 	let phone = restaurant.phone
+// 	let website = restaurant.website
+// 	let hours = restaurant.hours
+// 	let notes = restaurant.notes
+
+// 	// checks for missing information 
+
+// 	if (!restaurant.hasOwnProperty('hours')) {
+// 		hours = 'No hours available'
+// 	}
+
+// 	if (!restaurant.hasOwnProperty('website')) {
+// 		website = ''
+// 	}
+
+// 	// adds restaurant info to restaurant page
+
+// 	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
+
+// 	// iterates over notes array and adds each comment to the comments box
+
+// 	notes.forEach((note) => {
+// 		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${note}"</li>`
+// 	})
+
+// 	// adds restaurant name to page title
+
+// 	let title = document.getElementById('title')
+
+// 	title.innerHTML = name
+
+// 	// calls placeMarker function
+
+// 	placeMarker(address, name)
+// }
+
+// getRestoInfo()
+
+// function to retrieve restaurant info from my api
+
+async function getMoreRestoInfo() {
+	let restaurant = await fetch('/api/' + id + '.json')
 		.then((response) => {
 			return response.json()
 		}).then((jsonObj) => {
@@ -46,7 +107,7 @@ async function getRestoInfo() {
 	let hours = restaurant.hours
 	let notes = restaurant.notes
 
-	// checks for missing information 
+	// checks for missing or aberrant information 
 
 	if (!restaurant.hasOwnProperty('hours')) {
 		hours = 'No hours available'
@@ -55,10 +116,13 @@ async function getRestoInfo() {
 	if (!restaurant.hasOwnProperty('website')) {
 		website = ''
 	}
-
+	if (phone.length <= 8) {
+		phone = "802-" + phone
+	}
+// 
 	// adds restaurant info to restaurant page
 
-	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
+	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>${phone}</p></li><li><a href='${website}' target="_blank">${website}</a></li><li><p>${hours}</p></li>`
 
 	// iterates over notes array and adds each comment to the comments box
 
@@ -75,9 +139,11 @@ async function getRestoInfo() {
 	// calls placeMarker function
 
 	placeMarker(address, name)
+
 }
 
-getRestoInfo()
+getMoreRestoInfo()
+
 
 // function to place a marker on the map by lat and long coordinates
 
@@ -112,3 +178,15 @@ function placeMarker(address, name) {
 			})
 		})
 }
+
+// function to store feedback and repopulate comments section
+
+function populateStorage() {
+	localStorage.setItem('notes', message.value)
+}
+
+function retrieveSavedComments() {
+	savedComments = localStorage.getItem('notes')
+}
+
+
