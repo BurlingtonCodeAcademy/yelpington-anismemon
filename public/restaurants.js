@@ -24,11 +24,18 @@ let storedNotes = []
 // function to add inputted comments to comment space and call function to store them in local storage
 
 button.addEventListener('click', function () {
-	let transferredComments = localStorage.getItem(id + '-notes')
-	savedComments = JSON.parse(transferredComments)
-	savedComments.push(message.value)
-	populateStorage(id)
-	console.log(savedComments)
+	let transferredComments = localStorage.getItem(id + '-notes') || []
+	if (typeof transferredComments === 'string') {
+		savedComments = transferredComments.split(',')
+		savedComments.push(message.value)
+		populateStorage(id)
+		console.log(savedComments)
+	}
+
+	if (typeof transferredComments === 'object') {
+		savedComments.push(message.value)
+		populateStorage(id)
+	}
 	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
 	message.value = ""
 })
@@ -36,50 +43,55 @@ button.addEventListener('click', function () {
 // function to store feedback 
 
 function populateStorage(pageId) {
-	localStorage.setItem(pageId + '-notes', JSON.stringify(savedComments))
-	console.log(savedComments)
-	alert(savedComments.length)
+	localStorage.setItem(pageId + '-notes', savedComments.toString())
 }
 
 // function to repopulate comments section
 
 function retrieveSavedComments() {
 	let retrievedComments = localStorage.getItem(id + '-notes')
-	let storedNotes = JSON.parse(retrievedComments)
-	storedNotes.forEach((storedComment) => {
-		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${storedComment}"</li>`
-	})
+	if (retrievedComments === null) {
+		retrievedComments = 'Try adding a comment!'
+		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${retrievedComments}"</li>`
+	} else {
+		let storedNotes = retrievedComments.split(',')
+		storedNotes.forEach((storedComment) => {
+			comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${storedComment}"</li>`
+		})
+	}
 }
-console.log(storedNotes)
-console.log(savedComments)
 
 // function to retrieve restaurant info from my api
 
 async function getMoreRestoInfo() {
-	let restaurant = await fetch('/api/' + id + '.json')
+
+	let restaurant = await fetch('/api/indexRestaurants.json')
 		.then((response) => {
 			return response.json()
-		}).then((jsonObj) => {
-			return jsonObj
-
+		}).then((jsonArr) => {
+			return jsonArr
 		})
+
+	// iterates over index file to find the specific restaurant
+
+	let resto = restaurant.find((obj) => obj.id === id)
 
 	// initializing variables for info to be added to sidebar on restaurant page
 
-	let name = restaurant.name
-	let address = restaurant.address
-	let phone = restaurant.phone
-	let website = restaurant.website
-	let hours = restaurant.hours
-	let notes = restaurant.notes
+	let name = resto.name
+	let address = resto.address
+	let phone = resto.phone
+	let website = resto.website
+	let hours = resto.hours
+	let notes = resto.notes
 
 	// checks for missing or aberrant information 
 
-	if (!restaurant.hasOwnProperty('hours')) {
+	if (!resto.hasOwnProperty('hours')) { 
 		hours = 'No hours available'
 	}
 
-	if (!restaurant.hasOwnProperty('website')) {
+	if (!resto.hasOwnProperty('website')) { 
 		website = ''
 	}
 	if (phone.length <= 8) {
