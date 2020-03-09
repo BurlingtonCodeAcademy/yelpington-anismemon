@@ -16,77 +16,42 @@ let restaurantInfo = document.getElementById('restaurant-info')
 let button = document.getElementById('button')
 let message = document.getElementById('feedback')
 
-let savedComments
+// variables for storing comments in local storage
 
-// function to add inputted comments to comment space
+let savedComments = []
+let storedNotes = []
+
+// function to add inputted comments to comment space and call function to store them in local storage
 
 button.addEventListener('click', function () {
-	populateStorage()
-	retrieveSavedComments()
-	console.log(localStorage.notes)
+	let transferredComments = localStorage.getItem(id + '-notes')
+	savedComments = JSON.parse(transferredComments)
+	savedComments.push(message.value)
+	populateStorage(id)
 	console.log(savedComments)
-	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${savedComments}"</li>`
+	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
 	message.value = ""
-
 })
 
-// button.addEventListener('click', function () {
-// 	comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${message.value}"</li>`
-// 	message.value = ""
+// function to store feedback 
 
-// })
+function populateStorage(pageId) {
+	localStorage.setItem(pageId + '-notes', JSON.stringify(savedComments))
+	console.log(savedComments)
+	alert(savedComments.length)
+}
 
-// function to retrieve from database all info concerning the restaurant
+// function to repopulate comments section
 
-// async function getRestoInfo() {
-// 	let restaurant = await fetch('https://json-server.burlingtoncodeacademy.now.sh/restaurants/' + id)
-// 		.then((response) => {
-// 			return response.json()
-// 		}).then((jsonObj) => {
-// 			return jsonObj
-
-// 		})
-// 	// initializing variables for info to be added to sidebar on restaurant page
-
-// 	let name = restaurant.name
-// 	let address = restaurant.address
-// 	let phone = restaurant.phone
-// 	let website = restaurant.website
-// 	let hours = restaurant.hours
-// 	let notes = restaurant.notes
-
-// 	// checks for missing information 
-
-// 	if (!restaurant.hasOwnProperty('hours')) {
-// 		hours = 'No hours available'
-// 	}
-
-// 	if (!restaurant.hasOwnProperty('website')) {
-// 		website = ''
-// 	}
-
-// 	// adds restaurant info to restaurant page
-
-// 	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>802-${phone}</p></li><li><a href='${website}'>${website}</a></li><li><p>${hours}</p></li>`
-
-// 	// iterates over notes array and adds each comment to the comments box
-
-// 	notes.forEach((note) => {
-// 		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${note}"</li>`
-// 	})
-
-// 	// adds restaurant name to page title
-
-// 	let title = document.getElementById('title')
-
-// 	title.innerHTML = name
-
-// 	// calls placeMarker function
-
-// 	placeMarker(address, name)
-// }
-
-// getRestoInfo()
+function retrieveSavedComments() {
+	let retrievedComments = localStorage.getItem(id + '-notes')
+	let storedNotes = JSON.parse(retrievedComments)
+	storedNotes.forEach((storedComment) => {
+		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${storedComment}"</li>`
+	})
+}
+console.log(storedNotes)
+console.log(savedComments)
 
 // function to retrieve restaurant info from my api
 
@@ -98,6 +63,7 @@ async function getMoreRestoInfo() {
 			return jsonObj
 
 		})
+
 	// initializing variables for info to be added to sidebar on restaurant page
 
 	let name = restaurant.name
@@ -119,7 +85,7 @@ async function getMoreRestoInfo() {
 	if (phone.length <= 8) {
 		phone = "802-" + phone
 	}
-// 
+	// 
 	// adds restaurant info to restaurant page
 
 	restaurantInfo.innerHTML = `<li><p style='font-size: 3vh; text-decoration: underline'>${name}</p></li><li><p>${address}</p></li><li><p>${phone}</p></li><li><a href='${website}' target="_blank">${website}</a></li><li><p>${hours}</p></li>`
@@ -129,6 +95,10 @@ async function getMoreRestoInfo() {
 	notes.forEach((note) => {
 		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${note}"</li>`
 	})
+
+	// retrieves comments from local storage and adds them to the comments box
+
+	retrieveSavedComments()
 
 	// adds restaurant name to page title
 
@@ -142,8 +112,7 @@ async function getMoreRestoInfo() {
 
 }
 
-getMoreRestoInfo()
-
+getMoreRestoInfo() // I don't know if this should go somewhere else - it's the only function call that's just hanging out
 
 // function to place a marker on the map by lat and long coordinates
 
@@ -178,15 +147,4 @@ function placeMarker(address, name) {
 			})
 		})
 }
-
-// function to store feedback and repopulate comments section
-
-function populateStorage() {
-	localStorage.setItem('notes', message.value)
-}
-
-function retrieveSavedComments() {
-	savedComments = localStorage.getItem('notes')
-}
-
 
