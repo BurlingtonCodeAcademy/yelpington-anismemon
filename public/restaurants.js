@@ -28,8 +28,7 @@ button.addEventListener('click', function () {
 	if (typeof transferredComments === 'string') {
 		savedComments = transferredComments.split(',')
 		savedComments.push(message.value)
-		populateStorage(id)
-		console.log(savedComments)
+		populateStorage(id)		
 	}
 
 	if (typeof transferredComments === 'object') {
