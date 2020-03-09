@@ -49,10 +49,7 @@ function populateStorage(pageId) {
 
 function retrieveSavedComments() {
 	let retrievedComments = localStorage.getItem(id + '-notes')
-	if (retrievedComments === null) {
-		retrievedComments = 'Try adding a comment!'
-		comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${retrievedComments}"</li>`
-	} else {
+	if (typeof retrievedComments === 'string') {		
 		let storedNotes = retrievedComments.split(',')
 		storedNotes.forEach((storedComment) => {
 			comments.innerHTML += `<li style='padding-top: 1vh; list-style-type: none'>"${storedComment}"</li>`
