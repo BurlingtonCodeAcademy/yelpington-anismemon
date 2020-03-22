@@ -1,0 +1,247 @@
+@media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px) 
+    and (-webkit-min-device-pixel-ration: 3)
+    and (orientation: potrait) {
+        
+    }
+
+* {
+     padding: 0;
+     margin: 0;
+ }
+
+ body {
+     font-family: 'Josefin Slab', serif;
+     font-weight: bold;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+ }
+ 
+/********** main content areas **********/
+
+ #header {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: linear-gradient(rgb(129, 33, 129), rgb(196, 112, 196), rgb(129, 33, 129));     
+     width: 98vw;
+     height: 15vh;
+     margin: 0.5rem auto;
+     border-radius: 10px;
+     font-family: 'Signika', sans-serif;
+     font-size: 45px;
+ }
+
+ #main-content {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin: 0.5rem auto;
+     max-width: 98vw;
+ }
+
+ #sidebar {
+     width: 25vw;
+     background-color: rgb(182, 74, 182);     
+     border-radius: 10px;
+     margin: 0.5rem auto;
+     font-size: 3vh;
+     padding: 3vh 0 0 1vw;
+     flex: 1;
+ }
+
+ #map {
+     height: 100vh;
+     width: 71vw;
+     border-radius: 10px;
+ }
+
+ #map-container {
+     display: flex;
+     justify-content: center;
+     max-width: 90vw;
+     border-radius: 10px;
+     margin: 0.5rem auto;
+     flex: 1;
+ }
+
+ #comments-container {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 10vh;
+    max-width: 98vw;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgb(182, 74, 182), rgb(219, 139, 219), rgb(182, 74, 182));
+    border-radius: 10px;
+    font-size: 3vh;
+}
+
+#comments {
+    padding-left: 3vw;
+    padding-bottom: 1vh;
+    padding-top: 3vh;
+    font-size: 3vh;
+}
+
+ /********* list content within main areas **********/
+
+ ul#restaurant-info {
+     list-style-type: none;
+     padding: none;
+     text-decoration: none;
+ }
+
+ ul#resto-list {
+     list-style-type: none;
+     text-decoration: none;
+     margin-bottom: 1vh;
+ }
+
+ li {
+     padding: 1vh 0;
+ }
+
+ a:link {
+     text-decoration: none;
+     color: rgb(73, 6, 73);
+ }
+
+ a:visited {
+     color: rgb(73, 6, 73);
+ }
+
+ a:hover {
+     color: rgb(206, 106, 206)
+ }
+
+ #yelp:hover {
+     color: white;
+ }
+
+ /************* footer styles *************/
+
+ #footer {
+     grid-area: footer;
+     margin: 0.5rem auto;
+     /* background-color: rgb(129, 33, 129); */
+     background: linear-gradient(127deg, rgb(196, 112, 196), rgb(129, 33, 129));
+     max-width: 98vw;
+     max-height: 600px;
+     font-family: 'Signika', sans-serif;
+     border-radius: 10px;
+ }
+
+ .footerContainer {
+     max-width: 94%;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-template-rows: 1fr 4fr;
+     grid-gap: 1rem;
+     grid-template-areas: "footerHeader footerHeader footerHeader footerHeader" "footerForm footerForm footerContact footerContact";
+ }
+
+ .footerHeader {
+     font-variant: small-caps;
+     text-align: center;
+     font-size: 1.4rem;     
+     grid-area: footerHeader;
+ }
+
+ .footerForm {
+     grid-area: footerForm;
+     padding-bottom: 2vh;
+     font-family: 'Signika', sans-serif;
+ }
+
+ .footerInfo {
+     grid-area: footerInfo;
+     padding: 5px 10px;
+     text-align: justify;
+     display: flex;
+     align-items: flex-start;
+ }
+
+ .footerContact {
+     grid-area: footerContact;
+     padding: 5px 10px;
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-start;
+     font-size: 1em;
+ }
+
+ .item {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .grayFont {
+     color: #a9a9a9;
+ }
+
+ .darkerGray {
+     color: #c9b8b8;
+ }
+ 
+ .formRowTwo {
+     display: grid;
+     grid-template-columns: 1fr;
+     padding: 5px;
+     margin-bottom: 10px;
+ }
+
+ .formRowTwo textarea {
+     min-width: 320px;
+     min-height: 150px;
+     width: 95%;
+     margin-right: 10px;
+     box-shadow: 0px 4px 8px 0px gray;
+     border-radius: 2px;
+     border: none;
+     font-size: 1.2em;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ #footer ul li {
+     list-style-type: none;
+     padding: 5px;
+ }
+
+ #listFormat {
+     display: flex;
+     flex-direction: row;
+     padding: none;
+ }
+
+ .right {
+     padding-left: 3px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+ }
+
+ .left {
+     margin: 0px;
+ }
+
+ #footer ul {
+     padding: 5px;
+ }
+
+ button {
+     background-color: rgb(206, 106, 206);
+     color: white;
+     border-radius: 4px;
+     font-family: 'Signika', sans-serif;
+     padding: 10px 30px 10px 30px;
+     font-size: .9rem;
+     border-radius: 4px;
+     border-style: none;
+     box-shadow: 0px 4px 8px 0px gray;
+ }
+
+ button:hover {
+     background-color: rgb(240, 162, 240);
+ }
